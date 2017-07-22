@@ -9,3 +9,15 @@ h2{
   color: #000000 !important;
   font-family: 'Raleway', sans-serif;
 }
+
+.platform-android .bar-subheader.has-tabs-top{
+  top:93px !important;
+}
+
+.platform-android .has-subheader.has-tabs-top{
+  top:137px;
+}
+
+.button-block{
+  border-radius: 0px !important;
+}
