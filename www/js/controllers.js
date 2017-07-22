@@ -1,4 +1,4 @@
-angular.module('starter.controllers', ['ionic', 'jett.ionic.filter.bar'])
+angular.module('starter.controllers', ['ionic', 'jett.ionic.filter.bar', 'ngCordova'])
 
 .controller('HomeCtrl', function($scope) {})
 
@@ -59,8 +59,8 @@ function($http, $scope, $state, $ionicFilterBar){
 }])
 
 
-.controller('HireCtrl', ['$scope', '$ionicPopup',
-  function($scope, $ionicPopup){
+.controller('HireCtrl', ['$scope', '$ionicPopup' , '$cordovaSms',
+  function($scope, $ionicPopup, $cordovaSms){
     $scope.showConfirm = function() {
     var confirmPopup = $ionicPopup.confirm({
       title: 'Profile',
@@ -70,7 +70,7 @@ function($http, $scope, $state, $ionicFilterBar){
     });
     confirmPopup.then(function(res) {
       if(res) {
-        $scope.showSuccessAlert();
+        $scope.sendSMS();
       } else {
         console.log('You are not sure');
       }
@@ -83,7 +83,41 @@ function($http, $scope, $state, $ionicFilterBar){
         template: 'Messaged sent successfully!',
         okText: 'Close'
       })
+    }
+
+    $scope.showErrorAlert = function(){
+      var alertPopup = $ionicPopup.alert({
+        title: 'Error!',
+        template: 'Messaged was not send',
+        okText: 'Close'
+      })
 
     }
+
+    $scope.sms = {
+      number: '09271644978',
+      message: 'Hi! I saw your profile and picked as the person that will do a job for me. Reply ASAP for more details!'
+    };
+
+    document.addEventListener('deviceready', function(){
+      var options = {
+        replaceLineBreaks: false,
+        android: {
+          intent: ''
+        }
+      };
+
+    $scope.sendSMS = function(){
+      $cordovaSms
+        .send('09271644978', 'Hi! I saw your profile and picked as the person that will do a job for me. Reply ASAP for more details!', options)
+        .then(function(){
+          $scope.showSuccessAlert();
+        }, function(error)
+          {
+              $scope.showErrorAlert();
+      })
+    }
+    })
+
   }])
 ;

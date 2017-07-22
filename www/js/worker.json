@@ -1,0 +1,31 @@
+{ "workers" : [
+  {
+    "id": 1,
+    "job": "Carpenter",
+    "name":"Fixit Felix",
+    "location":"Caloocan City",
+    "rank": "Intermediate",
+    "primary": "Renovation",
+    "secondary": "Wirings"
+
+  },
+  {
+    "id": 2,
+    "job": "Programmer",
+    "name":"Elliot Alderson",
+    "location":"Marikina City",
+    "rank": "Expert",
+    "primary": "Programmer",
+    "secondary": "Hacking"
+  },
+  {
+    "id": 3,
+    "job": "Tutor",
+    "name":"Damien Magdangal",
+    "location":"San Juan City",
+    "rank": "Newbie",
+    "primary": "Tutor",
+    "secondary": "Programmer"
+  }
+
+]}
