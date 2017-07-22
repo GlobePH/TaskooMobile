@@ -1,0 +1,207 @@
+<ion-view view-title="Place">
+  <div class="bar bar-subheader
+    item-input-inset bar-light">
+    <label class="item-input-wrapper">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search" ng-model="query" placeholder="Search">
+    </label>
+  </div>
+  <ion-content class="padding has-subheader">
+  <!--  <ion-list>
+      <ion-item class="item-divider">
+        Caloocan City
+      </ion-item>
+      <ion-item>
+        <h2>Baragay 103</h2>
+        <p>9th Avenue corner 8th Street, Grace Park, Caloocan City</p>
+      </ion-item>
+      <ion-item>
+        <h2>BARANGAY 104</h2>
+        <p>9th Avenue corner 7th Street, Grace Park, Caloocan City</p>
+      </ion-item>
+      <ion-item>
+        <h2>Baragay 105</h2>
+        <p>Bo. Galino, Caloocan</p>
+      </ion-item>
+      <ion-item class="item-divider">
+        Mandaluyong City
+      </ion-item>
+      <ion-item>
+        <h2>ADDITION HILLS</h2>
+         <p>Blk. 12 Welfareville Compound</p>
+      </ion-item>
+      <ion-item>
+        <h2>BAGONG SILANG</h2>
+        <p>cor. J. Luna Street</p>
+      </ion-item>
+      <ion-item>
+        <h2>BARANGKA DRIVE</h2>
+        <p>775 Barangka Drive cor. Sgt. Bumatay</p>
+      </ion-item>
+      <ion-item class="item-divider">
+        Manila City
+      </ion-item>
+      <ion-item>
+        <h2>BARANGAY 100</h2>
+        <p>Roxas corner Jacinto Streets, Tondo, Manila</p>
+      </ion-item>
+      <ion-item>
+        <h2>BARANGAY 101</h2>
+        <p>Bonifacio Avenue, Vitas Katuparan</p>
+      </ion-item>
+      <ion-item>
+        <h2>BARANGAY 103</h2>
+        <p>269 Mustasa Street, Tondo, Manila</p>
+      </ion-item>
+      <ion-item class="item-divider">
+        Marikina City
+      </ion-item>
+      <ion-item>
+        <h2>Barangka</h2>
+        <p>District 1</p>
+      </ion-item>
+      <ion-item>
+        <h2>Calumpang</h2>
+        <p>District 1</p>
+      </ion-item>
+      <ion-item>
+        <h2>Concepcion Dos</h2>
+        <p>District 2</p>
+      </ion-item>
+      <ion-item class="item-divider">
+        Pasay City
+      </ion-item>
+      <ion-item>
+        <h2>Apelo Cruz</h2>
+      </ion-item>
+      <ion-item>
+        <h2>F.B Harisson</h2>
+      </ion-item>
+      <ion-item>
+        <h2>Baltao</h2>
+      </ion-item>
+      <ion-item class="item-divider">
+        Pasig City
+      </ion-item>
+      <ion-item>
+        <h2>Bagong Ilog</h2>
+      </ion-item>
+      <ion-item>
+        <h2>Bagong Katipunan</h2>
+      </ion-item>
+      <ion-item>
+        <h2>Bambang</h2>
+      </ion-item>
+      <ion-item class="item-divider">
+        Quezon City
+      </ion-item>
+      <ion-item>
+        <h2>Barangay ALICIA</h2>
+        <p>#2 Batangas St., Bago Bantay</p>
+      </ion-item>
+      <ion-item>
+        <h2>Barangay SAN ISIDRO GALAS</h2>
+        <p>Unang Hakbang St., Galas</p>
+      </ion-item>
+      <ion-item>
+        <h2>Barangay DOÑA AURORA</h2>
+        <p>N. Ponce St., cor. Luskot St.</p>
+      </ion-item>
+      <ion-item class="item-divider">
+        San Juan City
+      </ion-item>
+      <ion-item>
+        <h2>BARANGAY BALONG-BATO</h2>
+        <p>F. Roman St., Barangay Balong Bato, San Juan City</p>
+      </ion-item>
+      <ion-item>
+        <h2>BARANGAY ERMITAÑO</h2>
+        <p>F. Santos St., Barangay Ermitaño, San Juan City</p>
+      </ion-item>
+      <ion-item>
+        <h2>BARANGAY PASADENA</h2>
+        <p>F. Benitez St., Barangay Pasadena, San Juan City</p>
+      </ion-item>
+      <ion-item class="item-divider">
+        Taguig City
+      </ion-item>
+      <ion-item>
+        <h2>Barangay Western Bicutan Taguig</h2>
+        <p>Sampaguita, Taguig, 1630 Metro Manila</p>
+      </ion-item>
+      <ion-item>
+        <h2>Barangay Calzada</h2>
+        <p>Ruhale, Calzada Tipas, Taguig, 1637 Metro Manila</p>
+      </ion-item>
+      <ion-item>
+        <h2>Barangay Napindan Taguig City</h2>
+        <p>A, 111 Labao, Taguig, Metro Manila</p>
+      </ion-item>
+    </ion-list> -->
+    <ion-list>
+      <ion-item class="item-divider">
+        Caloocan City
+      </ion-item>
+      <ion-item ng-repeat="caloocan in caloocans" class="item-text-wrap">
+          <h2>{{caloocan.barangay}}</h2>
+          <p>{{caloocan.address}}</p>
+      </ion-item>
+      <ion-item class="item-divider">
+      Mandaluyong City
+      </ion-item>
+      <ion-item ng-repeat="manda in mandaluyongs" class="item-text-wrap">
+          <h2>{{manda.barangay}}</h2>
+          <p>{{manda.address}}</p>
+        </ion-item>
+      <ion-item class="item-divider">
+      Manila
+      </ion-item>
+      <ion-item ng-repeat="mnl in manila" class="item-text-wrap">
+          <h2>{{mnl.barangay}}</h2>
+          <p>{{mnl.address}}</p>
+        </ion-item>
+      <ion-item class="item-divider">
+      Marikina City
+      </ion-item>
+      <ion-item ng-repeat="mar in marikina" class="item-text-wrap">
+          <h2>{{mar.barangay}}</h2>
+          <p>{{mar.address}}</p>
+        </ion-item>
+      <ion-item class="item-divider">
+      Pasay City
+      </ion-item>
+      <ion-item ng-repeat="pasa in pasay" class="item-text-wrap">
+          <h2>{{pasa.barangay}}</h2>
+          <p>{{pasa.address}}</p>
+        </ion-item>
+      <ion-item class="item-divider">
+      Pasig City
+      </ion-item>
+      <ion-item ng-repeat="pasi in pasig" class="item-text-wrap">
+          <h2>{{pasi.barangay}}</h2>
+          <p>{{pasi.address}}</p>
+        </ion-item>
+      <ion-item class="item-divider">
+      Quezon City
+      </ion-item>
+      <ion-item ng-repeat="q in qc" class="item-text-wrap">
+          <h2>{{q.barangay}}</h2>
+          <p>{{q.address}}</p>
+        </ion-item>
+      <ion-item class="item-divider">
+      San Juan City
+      </ion-item>
+      <ion-item ng-repeat="san in sanjuan" class="item-text-wrap">
+          <h2>{{san.barangay}}</h2>
+          <p>{{san.address}}</p>
+        </ion-item>
+      <ion-item class="item-divider">
+      Taguig City
+      </ion-item>
+      <ion-item ng-repeat="tag in taguig" class="item-text-wrap">
+          <h2>{{tag.barangay}}</h2>
+          <p>{{tag.address}}</p>
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

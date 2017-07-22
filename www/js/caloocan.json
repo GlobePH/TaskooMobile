@@ -1,0 +1,16 @@
+{ "caloocans" : [
+  {
+    "barangay":"Barangay 103",
+    "address":"9th Avenue corner 8th Street, Grace Park, Caloocan City"
+
+  },
+  {
+    "barangay":"BARANGAY 104",
+    "address":"9th Avenue corner 7th Street, Grace Park, Caloocan City"
+  },
+  {
+    "barangay":"Baragay 105",
+    "address":"Bo. Galino, Caloocan"
+  }
+
+]}

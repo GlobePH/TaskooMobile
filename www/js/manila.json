@@ -1,0 +1,15 @@
+{"manila": [
+  {
+    "barangay":"BARANGAY 100",
+    "address":"Roxas corner Jacinto Streets, Tondo, Manila"
+  },
+  {
+    "barangay":"BARANGAY 101",
+    "address":"Bonifacio Avenue, Vitas Katuparan"
+  },
+  {
+    "barangay":"BARANGAY 103",
+    "address":"269 Mustasa Street, Tondo, Manila"
+  }
+
+]}

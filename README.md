@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Ionic App Base
 ==============
 
@@ -24,3 +25,6 @@ More info on this can be found on the Ionic [Getting Started](https://ionicframe
 ## Issues
 
 Issues have been disabled on this repo. If you do find an issue or have a question, consider posting it on the [Ionic Forum](https://forum.ionicframework.com/). If there is truly an error, follow our guidelines for [submitting an issue](https://ionicframework.com/submit-issue/) to the main Ionic repository.
+=======
+# TaskooMobile
+>>>>>>> 63c8a21b77d35ccc84f8a89de05a869b44eaf221

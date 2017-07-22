@@ -1,47 +1,47 @@
 angular.module('starter.services', [])
 
-.factory('Chats', function() {
+.factory('Places', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var chats = [{
+  var places = [{
     id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'img/ben.png'
+    city: 'Caloocan City',
+    barangay: 'Baragay 103',
+    address: '9th Avenue corner 8th Street, Grace Park, Caloocan City'
   }, {
     id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'img/max.png'
+    city: 'Caloocan City',
+    barangay: 'Baragay 103',
+    address: '9th Avenue corner 8th Street, Grace Park, Caloocan City'
   }, {
     id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'img/adam.jpg'
+    city: 'Caloocan City',
+    barangay: 'Baragay 103',
+    address: '9th Avenue corner 8th Street, Grace Park, Caloocan City'
   }, {
     id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'img/perry.png'
+    city: 'Caloocan City',
+    barangay: 'Baragay 103',
+    address: '9th Avenue corner 8th Street, Grace Park, Caloocan City'
   }, {
     id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'img/mike.png'
+    city: 'Caloocan City',
+    barangay: 'Baragay 103',
+    address: '9th Avenue corner 8th Street, Grace Park, Caloocan City'
   }];
 
   return {
     all: function() {
-      return chats;
+      return places;
     },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
+    remove: function(place) {
+      chats.splice(chats.indexOf(place), 1);
     },
-    get: function(chatId) {
+    get: function(placeId) {
       for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
+        if (chats[i].id === parseInt(placeId)) {
+          return places[i];
         }
       }
       return null;

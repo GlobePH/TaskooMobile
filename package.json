@@ -1,7 +1,7 @@
 {
   "name": "Taskoo",
   "version": "0.0.1",
-  "description": "An Ionic project",
+  "description": "Making the Unemployed Productive!",
   "devDependencies": {
     "@ionic/cli-plugin-gulp": "1.0.2",
     "@ionic/cli-plugin-ionic1": "2.0.1",
