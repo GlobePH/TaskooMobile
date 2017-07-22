@@ -1,6 +1,6 @@
 {
   "name": "Taskoo",
-  "app_id": "",
+  "app_id": "535a5987",
   "type": "ionic1",
   "watchPatterns": [
     "scss/**/*"
