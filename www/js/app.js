@@ -86,7 +86,18 @@ $ionicCloudProvider.init({
         controller: 'PlaceCtrl'
       }
     }
-  });
+  })
+
+  .state('tab.search', {
+    url: '/search',
+    views: {
+      'tab-home': {
+        templateUrl: 'templates/search.html',
+        controller: 'HireCtrl'
+      }
+    }
+  })
+  ;
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/home');

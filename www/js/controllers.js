@@ -11,7 +11,7 @@ angular.module('starter.controllers', ['ionic', 'jett.ionic.filter.bar'])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-  
+
 })
 
 .controller('PlaceCtrl', ['$http', '$scope', '$state', '$ionicFilterBar',
@@ -56,4 +56,34 @@ function($http, $scope, $state, $ionicFilterBar){
     .success(function(data){
       $scope.taguig = data.taguig;
     })
-}]);
+}])
+
+
+.controller('HireCtrl', ['$scope', '$ionicPopup',
+  function($scope, $ionicPopup){
+    $scope.showConfirm = function() {
+    var confirmPopup = $ionicPopup.confirm({
+      title: 'Profile',
+      templateUrl: 'templates/popup/profile.html',
+      okText: 'Hire!',
+      cancelText: 'Back'
+    });
+    confirmPopup.then(function(res) {
+      if(res) {
+        $scope.showSuccessAlert();
+      } else {
+        console.log('You are not sure');
+      }
+    });
+  }
+
+    $scope.showSuccessAlert = function(){
+      var alertPopup = $ionicPopup.alert({
+        title: 'Transaction',
+        template: 'Messaged sent successfully!',
+        okText: 'Close'
+      })
+
+    }
+  }])
+;
