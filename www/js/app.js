@@ -97,6 +97,15 @@ $ionicCloudProvider.init({
       }
     }
   })
+  .state('tab.profile', {
+    url: '/search/:workerId',
+    views: {
+      'tab-home': {
+        templateUrl: 'templates/profile.html',
+        controller: 'HireCtrl'
+      }
+    }
+  })
   ;
 
   // if none of the above states are matched, use this as the fallback

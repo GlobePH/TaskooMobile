@@ -14,6 +14,14 @@ angular.module('starter.controllers', ['ionic', 'jett.ionic.filter.bar', 'ngCord
 
 })
 
+.controller('WorkerCtrl', ['http', '$scope', '$state',
+  function($http, $scope, $state){
+    $http.get('js/workers.json')
+      .success(function(data){
+        $scope.workers = data.workers;
+      })
+  }])
+
 .controller('PlaceCtrl', ['$http', '$scope', '$state', '$ionicFilterBar',
 function($http, $scope, $state, $ionicFilterBar){
   $http.get('js/places.json')
@@ -59,8 +67,13 @@ function($http, $scope, $state, $ionicFilterBar){
 }])
 
 
-.controller('HireCtrl', ['$scope', '$ionicPopup' , '$cordovaSms',
-  function($scope, $ionicPopup, $cordovaSms){
+.controller('HireCtrl', ['$http', '$scope', '$stateParams', '$ionicPopup' , '$cordovaSms',
+  function($http, $scope, $stateParams, $ionicPopup, $cordovaSms){
+    $http.get('js/worker.json')
+      .success(function(data){
+        $scope.workers = data.workers;
+      })
+
     $scope.showConfirm = function() {
     var confirmPopup = $ionicPopup.confirm({
       title: 'Profile',
@@ -70,33 +83,56 @@ function($http, $scope, $state, $ionicFilterBar){
     });
     confirmPopup.then(function(res) {
       if(res) {
-        $scope.sendSMS();
+        $scope.showFinalTransaction();
       } else {
-        $scope.showErrorAlert();
+
       }
     });
   }
 
+  $scope.showFinalTransaction = function() {
+  var confirmPopup = $ionicPopup.confirm({
+    title: 'Confirmation',
+    template: '<strong><p>Are you sure with your decision?</p></strong  >',
+    okText: 'Hire!',
+    cancelText: 'Back'
+  });
+  confirmPopup.then(function(res) {
+    if(res) {
+      $scope.sendSMS();
+    } else {
+      $scope.showCancelTransaction();
+    }
+  });
+}
+
     $scope.showSuccessAlert = function(){
       var alertPopup = $ionicPopup.alert({
-        title: 'Transaction',
-        template: 'Messaged sent successfully!',
+        title: 'Confirmation',
+        template: '<strong>Message sent successfully!</strong>',
         okText: 'Close'
       })
     }
 
     $scope.showErrorAlert = function(){
       var alertPopup = $ionicPopup.alert({
-        title: 'Error!',
-        template: 'Messaged was not send',
+        title: 'Transaction',
+        template: '<strong>Message was not sent!</strong>',
         okText: 'Close'
       })
+    }
 
+    $scope.showCancelTransaction = function(){
+      var alertPopup = $ionicPopup.alert({
+        title: 'Transaction',
+        template: '<strong>Transaction canceled!</strong>',
+        okText: 'Close'
+      })
     }
 
     $scope.sms = {
       number: '09271644978',
-      message: 'Hi! I saw your profile and picked as the person that will do a job for me. Reply ASAP for more details!'
+      message: 'Hi! I saw your profile and picked as the person that will do a job for me. Reply ASAP for more details about the job and the reward!'
     };
 
     document.addEventListener('deviceready', function(){
@@ -109,7 +145,7 @@ function($http, $scope, $state, $ionicFilterBar){
 
     $scope.sendSMS = function(){
       $cordovaSms
-        .send('09271644978', 'Hi! I saw your profile in Taskoo and picked you as the person who will do a job for me. Reply in this number ASAP for more details! ', options)
+        .send('09271644978', 'Hi! I saw your profile in Taskoo and picked you as the person who will do a job for me. Reply in this number ASAP for more details about the job and the reward! ', options)
         .then(function(){
           $scope.showSuccessAlert();
         }, function(error)
@@ -120,4 +156,12 @@ function($http, $scope, $state, $ionicFilterBar){
     })
 
   }])
+
+
+  .controller('ProfileCtrl', function($scope, $http, $stateParams, Places){
+    $http.get('js/worker.json')
+    .success(function(data){
+      $scope.workers = Places.get($stateParams.id).data;
+    })
+  })
 ;

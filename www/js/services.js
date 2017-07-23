@@ -1,50 +1,18 @@
 angular.module('starter.services', [])
 
-.factory('Places', function() {
+.factory('Places', function($http, $scope, $stateParams) {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var places = [{
-    id: 0,
-    city: 'Caloocan City',
-    barangay: 'Baragay 103',
-    address: '9th Avenue corner 8th Street, Grace Park, Caloocan City'
-  }, {
-    id: 1,
-    city: 'Caloocan City',
-    barangay: 'Baragay 103',
-    address: '9th Avenue corner 8th Street, Grace Park, Caloocan City'
-  }, {
-    id: 2,
-    city: 'Caloocan City',
-    barangay: 'Baragay 103',
-    address: '9th Avenue corner 8th Street, Grace Park, Caloocan City'
-  }, {
-    id: 3,
-    city: 'Caloocan City',
-    barangay: 'Baragay 103',
-    address: '9th Avenue corner 8th Street, Grace Park, Caloocan City'
-  }, {
-    id: 4,
-    city: 'Caloocan City',
-    barangay: 'Baragay 103',
-    address: '9th Avenue corner 8th Street, Grace Park, Caloocan City'
-  }];
 
   return {
-    all: function() {
-      return places;
-    },
-    remove: function(place) {
-      chats.splice(chats.indexOf(place), 1);
-    },
-    get: function(placeId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(placeId)) {
-          return places[i];
+      get: function(workerId) {
+        for (var i = 0; i < workers.length; i++) {
+          if (workers[i].id === parseInt(workerId)) {
+          return  workers[i];
+            }
+          }
+        return null;
         }
-      }
-      return null;
-    }
   };
 });

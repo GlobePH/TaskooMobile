@@ -1,10 +1,13 @@
 <ion-view view-title="Search">
   <ion-content class="padding">
     <ion-list>
-      <ion-item class="item item-avatar item-text-wrap"  ng-click="showConfirm()">
-        <img src="img/hammer.png" alt="Hammer">
-          <h2>Name: Fixit Felix</h2>
-          <p>Location: Caloocan City</p>
+      <ion-item class="item item-avatar item-text-wrap" ng-repeat="worker in workers"  ng-click="showConfirm()">
+        <img src="img/{{worker.img}}.png" alt="{{worker.img}}">
+          <p>Name: <strong>{{worker.name}}</p></strong>
+          <p>Location: <strong>{{worker.location}}</p></strong>
+          <p>Rank: <strong>{{worker.rank}}</p></strong>
+          <p>Primary: <strong>{{worker.primary}}</p></strong>
+          <p>Secondary: <strong>{{worker.secondary}}</p></strong>
 
       </ion-item>
     </ion-list>

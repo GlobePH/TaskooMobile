@@ -1,6 +1,7 @@
 { "workers" : [
   {
-    "id": 1,
+    "id": 0,
+    "img": "hammer",
     "job": "Carpenter",
     "name":"Fixit Felix",
     "location":"Caloocan City",
@@ -10,7 +11,8 @@
 
   },
   {
-    "id": 2,
+    "id": 1,
+    "img": "coding",
     "job": "Programmer",
     "name":"Elliot Alderson",
     "location":"Marikina City",
@@ -19,13 +21,34 @@
     "secondary": "Hacking"
   },
   {
-    "id": 3,
+    "id": 2,
+    "img": "tutorial",
     "job": "Tutor",
     "name":"Damien Magdangal",
     "location":"San Juan City",
     "rank": "Newbie",
     "primary": "Tutor",
     "secondary": "Programmer"
+  },
+  {
+    "id": 3,
+    "img": "broom",
+    "job": "House helper",
+    "name":"Juana Dela Cruz",
+    "location":"Pasay City",
+    "rank": "Expert",
+    "primary": "House keeping",
+    "secondary": "Cooking"
+  },
+  {
+    "id": 4,
+    "img": "plumbering",
+    "job": "Plumber",
+    "name":"Juan Dela Cruz",
+    "location":"Pasig City",
+    "rank": "Newbie",
+    "primary": "Clogged toilets",
+    "secondary": "Pipe path setup"
   }
 
 ]}
