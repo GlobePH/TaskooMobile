@@ -72,7 +72,7 @@ function($http, $scope, $state, $ionicFilterBar){
       if(res) {
         $scope.sendSMS();
       } else {
-        console.log('You are not sure');
+        $scope.showErrorAlert();
       }
     });
   }
@@ -109,7 +109,7 @@ function($http, $scope, $state, $ionicFilterBar){
 
     $scope.sendSMS = function(){
       $cordovaSms
-        .send('09271644978', 'Hi! I saw your profile and picked as the person that will do a job for me. Reply ASAP for more details!', options)
+        .send('09271644978', 'Hi! I saw your profile in Taskoo and picked you as the person who will do a job for me. Reply in this number ASAP for more details! ', options)
         .then(function(){
           $scope.showSuccessAlert();
         }, function(error)
